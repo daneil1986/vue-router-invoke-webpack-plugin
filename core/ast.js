@@ -10,9 +10,7 @@ const {
   firstLowerCase,
   replaceAlias,
   replaceArtificialDynamic,
-  makeMap,
-  diff
-} = require('./utils');
+  makeMap, diff } = require('./utils');
 const {
   isFile,
   root,
@@ -282,7 +280,7 @@ function generateRouteString(filesAst, pre) {
           );
           if (isNestChild) {
             this.nestArr.forEach(v => {
-              if (pre.parentName.join('-').includes(v)) {
+              if (pre.parentName.join('-').includes(v) && nestCollections[v]) {
                 nestCollections[v]--;
               }
             });
