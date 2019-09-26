@@ -298,7 +298,7 @@ function generateRouteString(filesAst, pre) {
               const val = nestCollections[key];
               if (val === 0) {
                 count++;
-                this.routeString += '],},';
+                count === 1 && (this.routeString += '],},');
               }
             }
             if (count === Object.keys(nestCollections).length) {
