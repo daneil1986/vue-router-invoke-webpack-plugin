@@ -135,14 +135,13 @@ function generateFilesAst(dir, filesAst, parent) {
     } else {
       curAst.parentName = [];
     }
-    filesAst.push(curAst);
 
     if (
-      this.ignoreRegExp.test(
+      !this.ignoreRegExp.test(
         curAst.parentName.length ? curAst.parentName.join('') : curAst.file
       )
     ) {
-      curAst.ignore = true;
+      filesAst.push(curAst);
     }
 
     let multipleError;
