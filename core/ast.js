@@ -138,7 +138,7 @@ function generateFilesAst(dir, filesAst, parent) {
 
     if (
       !this.ignoreRegExp.test(
-        curAst.parentName.length ? curAst.parentName.join('') : curAst.file
+        curAst.file
       )
     ) {
       filesAst.push(curAst);
