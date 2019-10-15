@@ -299,9 +299,11 @@ function generateRouteString(filesAst, pre) {
               if (val === 0) {
                 count++;
                 count === 1 && (this.routeString += '],},');
+                delete nestCollections[key];
               }
             }
-            if (count === Object.keys(nestCollections).length) {
+
+            if (Object.keys(nestCollections).length === 0 ) {
               nestCollections = {};
             }
           }
